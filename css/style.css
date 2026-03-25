@@ -1,0 +1,89 @@
+/* Configuration de la section Hero */
+.hero {
+  width: 100%;
+  height: 100vh; /* Prend toute la hauteur de l'écran */
+  min-height: 600px;
+  position: relative;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Empêche les images de dépasser */
+}
+
+/* Le Carrousel qui sert de fond */
+#heroCarousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Niveau 1 : Tout au fond */
+}
+
+.carousel-inner, .carousel-item {
+  height: 100%; /* Important pour que l'image prenne toute la hauteur */
+}
+
+/* Style des images du carrousel */
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  /* AJOUTE CES 2 LIGNES POUR LA QUALITÉ : */
+  filter: blur(4px);  /* Floute légèrement l'image */
+  transform: scale(1.05); /* Zoom un tout petit peu pour éviter les bords blancs du flou */
+}
+
+/* Le Filtre Sombre (Overlay) */
+.hero::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.6); /* Noir à 60% d'opacité -> Effet sombre */
+  position: absolute;
+  inset: 0;
+  z-index: 2; /* Niveau 2 : Au dessus de l'image */
+}
+
+/* Le Texte et Contenu */
+.hero .container {
+  position: relative;
+  z-index: 3; /* Niveau 3 : Tout au dessus pour être cliquable/lisible */
+}
+
+/* Typographie */
+.hero h2 {
+  font-size: 64px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+}
+
+.hero p {
+  font-size: 28px;
+  font-weight: 300;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+  .hero h2 { font-size: 36px; }
+  .hero p { font-size: 18px; }
+}
+
+
+
+#aproposlogo{
+    width: 180px; 
+    height: 180px; 
+    object-fit: cover;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    border-bottom: 3px solid #000; 
+    display: inline-block;
+}
+
